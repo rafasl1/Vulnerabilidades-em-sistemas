@@ -8,6 +8,8 @@ Esse é um documento para quem quer aprender sobre algumas vulnerabilidades e fa
 Exemplo:<br>
 Suponha que um usuário mal intencionado (como um hacker) queira acessar o email de outro usuário qualquer. Se o primeiro souber o endereço de email do segundo, isso já é o suficiente para invadir a conta. Isso pode ser feito da seguinte forma: <br>
 
+![login](https://user-images.githubusercontent.com/49666986/77588523-cc666a80-6ec8-11ea-807e-f0356618ecc2.jpg)
+
 No input da senha, está escrito: 
 <code>
 x’ or ‘a’=’a  
