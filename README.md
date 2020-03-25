@@ -28,3 +28,5 @@ Nesse caso, o hacker conseguirá fazer login na conta do usuário.<br>
 
 Para tratar esse problema em um sistema que usa PHP, uma alternativa é usar a função <code>addSlashes</code>. Ela adiciona barras invertidas a uma string que contenha os caracteres (‘), (“) e (\)  e que são enviadas ao banco de dados, mas a barra invertida não é inserida no banco. <br>
 Documentação: https://www.php.net/manual/pt_BR/function.addslashes.php
+
+### Vou atualizar isso aqui mais tarde com os outros tópicos (XSS, Brute-force, engenharia social e etc). Volte aqui depois pra conferir! :D
