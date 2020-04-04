@@ -29,4 +29,33 @@ Nesse caso, o hacker conseguirá fazer login na conta do usuário.<br>
 Para tratar esse problema em um sistema que usa PHP, uma alternativa é usar a função <code>addSlashes</code>. Ela adiciona barras invertidas a uma string que contenha os caracteres (‘), (“) e (\)  e que são enviadas ao banco de dados, mas a barra invertida não é inserida no banco. <br>
 Documentação: https://www.php.net/manual/pt_BR/function.addslashes.php
 
-### Vou atualizar isso aqui mais tarde com os outros tópicos (XSS, Brute-force, engenharia social e etc). Volte aqui depois pra conferir! :D
+<h2>Cross Site Scripting (XSS)</h2>
+
+<p>O XSS é uma vulnerabilidade semelhante ao SQL injection, mas usualmente ocorre com uma inserção de código JavaScript e pode fazer com que a página funcione de forma indesejada. Isso pode acontecer de várias formas, desde avisos na tela até páginas em branco ou imagens não desejadas aparecendo na tela.</p>
+<p>
+Exemplo: 
+Suponha que o seu site tenha uma página onde é possível adicionar um comentário sobre um texto que ela acabou de ler (como em um blog). Se um hacker mal intencionado quiser fazer com que a página fique toda em branco, ele pode inserir o código: </p>
+<code>
+<script>
+     document.body.innerHTML = “ ”;
+</script></code>
+
+Se ele quiser ser mais criativo, pode colocar uma imagem na página apenas inserindo:
+<code>
+<script>
+     document.body.innerHTML = “ “;<br>
+     var imagem = new Image ();<br>
+     imagem.src = “[url da imagem]”;<br>
+     document.body.appendChild(imagem);<br>
+</script></code>
+<p>
+Isso tudo ocorre porque o Hacker está inserindo códigos JavaScript no corpo do HTML.
+Uma forma de evitar esse tipo de ataque é realizar o escaping de elementos HTML. No Java isso pode ser feito através de uma biblioteca chamada ESAPI.</p>
+<code>
+String encoding=ESAPI.encoder().encodeForJavaScript();</code>
+<p>
+No PHP, pode-se usar a função htmlspecialchars, que pode fazer com que trechos de códigos JS sejam interpretados como elementos HTML quaisquer.</p>
+<p>Documentação: https://www.php.net/manual/pt_BR/function.htmlspecialchars.php</p>
+
+
+### Vou atualizar isso aqui mais tarde com os outros tópicos (Brute-force, engenharia social e etc). Volte aqui depois pra conferir! :D
